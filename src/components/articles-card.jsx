@@ -4,7 +4,7 @@ export const ArticlesCard = ({article}) => {
   const individualLink = "/articles/" + article.article_id;
   return (
     <div className="articles-card">
-      <li>
+      <div>
       <img
         src={article.article_img_url}
         alt={`article image of ${article.title}`}
@@ -19,7 +19,7 @@ export const ArticlesCard = ({article}) => {
       <button className="read-article-button">
         <Link to={individualLink}>Read</Link>
       </button>
-      </li>
+      </div>
     </div>
   );
 };

@@ -5,3 +5,134 @@
   text-align: center;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+:root {
+  --primary-color: #521a68;
+  --text-dark: #1a0f24;
+}
+h1 {
+  color: var(--primary-color);
+}
+
+p {
+  color: #1a0f24; 
+}
+
+.article-card{
+  max-width: 90vw;
+  height: 150px;
+  display: grid;
+  column-gap: 3px;
+  margin: 8px; 
+  grid-template-columns: 100px auto 50px;
+  grid-template-areas: 
+    "article-card-img article-card-title read-button"
+    "article-card-img article-card-author read-button"
+    "article-card-img article-card-category read-button";
+}
+
+.article-card-img {
+  width: 100px;
+  height: 100px;
+  grid-area: article-card-img;
+}
+
+.article-list {
+  list-style-type: none;
+}
+
+.read-button {
+  width: 50px;
+  max-height: 30px;
+  background-color: #94e2f0;
+  grid-area: read-button;
+}
+
+.article-card-title {
+  max-width: fit-content;  border: 2px solid black;
+  grid-area: article-card-title;
+}
+
+.article-card-text {
+  max-width: fit-content;
+}
+
+.article-card-author {
+  font-size: 18px;
+  grid-area: article-card-author;
+}
+
+.article-card-category {
+  grid-area: article-card-category;
+  font-size: 14px;
+}
+
+.article {
+ color: #1a0f24;
+ display: block;
+}
+
+.article-title {
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.article-info {
+  color: #5c4d5f;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.article-body {
+  text-align: justify;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.comments-card {
+  text-align: justify;
+  display: block;
+  margin: 10px;
+  border-top: 1px solid #165e6c;
+  padding-top: 10px
+}
+
+.comment-author {
+  color: #5c4d5f;
+  font-size: 14px;
+  padding-bottom: 3px;
+}
+
+.comment-created_at {
+  color: #5c4d5f;
+  font-size: 14px;
+  padding-bottom: 3px;
+}
+
+.comment-votes {
+  color: #5c4d5f;
+  font-size: 14px;
+  padding-bottom: 3px;
+}
+
+.comment-body {
+  padding-bottom: 8px;
+}
+
+.back-button {
+  width: 70px;
+  max-height: 40px;
+  background-color: #94e2f0;
+}
