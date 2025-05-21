@@ -28,16 +28,16 @@ export const IndividualArticle = () => {
       }, [article_id]);
 
     return (
-        <>
+        <div className="indvidual-article-wrapper">
         {isArticleLoading ? (
         <p>Article loading</p>
       ) : ( 
         <div className="article">
-        <h2 className="article-title">{individualArticle.title}</h2>
-        <p className="article-info">Author: {individualArticle.author}</p>
-        <p className="article-date">Created at: {individualArticle.created_at}</p>
-        <p className="article-votes">Votes: {individualArticle.votes}</p>
-        <p className="article-body">{individualArticle.body}</p>
+        <h2 className="individual-article-title">{individualArticle.title}</h2>
+        <p className="individual-article-info">Author: {individualArticle.author}</p>
+        <p className="individual-article-date">Created at: {individualArticle.created_at}</p>
+        <p className="individual-article-votes">Votes: {individualArticle.votes}</p>
+        <p className="individual-article-body">{individualArticle.body}</p>
         <p className="article-comment-count">Comments: {individualArticle.comment_count}</p>
         </div>
         )}
@@ -51,6 +51,6 @@ export const IndividualArticle = () => {
         <button className="back-button">
         <Link to={articles}>Back</Link>
       </button>
-        </>
+        </div>
     )
 }
