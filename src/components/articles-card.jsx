@@ -1,29 +1,25 @@
-export const ArticlesCard = ({
-  article_id,
-  author,
-  title,
-  topic,
-  created_at,
-  votes,
-  article_img_url,
-  comment_count,
-}) => {
+import { Link } from "react-router-dom";
+
+export const ArticlesCard = ({article}) => {
+  const individualLink = "/articles/" + article.article_id;
   return (
     <div className="articles-card">
+      <li>
       <img
-        src={article_img_url}
-        alt={`article image of ${title}`}
+        src={article.article_img_url}
+        alt={`article image of ${article.title}`}
         className="article-image"
       ></img>
       <div className="article-details">
-        <h3 className="article-title">{title}</h3>
-        <p className="author">Author: {author}</p>
-        <p className="topic">Topic: {topic}</p>
-        <p className="created-at">Created at: {created_at}</p>
-        <p className="votes">Votes: {votes}</p>
-        <p className="comment-count">Comment count: {comment_count}</p>
-        <p className="article-id">Article id: {article_id}</p>
+        <h3 className="article-title">{article.title}</h3>
+        <p className="author">Author: {article.author}</p>
+        <p className="topic">Topic: {article.topic}</p>
+        <p className="created-at">Created at: {article.created_at}</p>
       </div>
+      <button className="read-article-button">
+        <Link to={individualLink}>Read</Link>
+      </button>
+      </li>
     </div>
   );
 };

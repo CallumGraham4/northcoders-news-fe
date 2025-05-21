@@ -14,3 +14,13 @@ export const getArticles = () => {
       })
 };
 
+export function getArticleById(article_id) {
+  return apiClient
+    .get(`/articles/${article_id}`)
+    .then((response) => {
+      return response.data;
+    }).catch((err) => {
+        console.log(err)
+    });
+}
+
