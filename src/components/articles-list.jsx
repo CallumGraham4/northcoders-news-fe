@@ -1,24 +1,27 @@
 import { ArticlesCard } from "./articles-card";
+import { useEffect, useState } from 'react'
+import { getArticles } from "./fetch";
 
-export const ArticlesList = ({ articles }) => {
-  console.log(articles)
+
+export const ArticlesList = () => {
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getArticles().then((response) => {
+      setArticles(response);
+      setLoading(false);
+    });
+  }, []);
+
   return (
     <div className="articles-list">
-      <div className="articles-container">
-        {articles.map((article) => (
-          <ArticlesCard
-            key={article.article_id}
-            article_id={article.article_id}
-            title={article.title}
-            article_img_url={article.article_img_url}
-            author={article.author}
-            topic={article.topic}
-            created_at={article.created_at}
-            votes={article.votes}
-            comment_count={article.comment_count}
-          />
+      {loading ? 
+            (<p>Loading articles...</p>) 
+            : articles.length === 0 ? (<p>No articles found.</p>) 
+            : articles.map((article) => (
+          <ArticlesCard key={article.article_id} article={article} />
         ))}
-      </div>
     </div>
   );
 };
