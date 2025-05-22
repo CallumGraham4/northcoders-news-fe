@@ -6,12 +6,12 @@ export const apiClient = axios.create({
 
 export const getArticles = () => {
   return apiClient
-      .get("/articles")
-      .then((response) => response.data.articles)
-      .catch((error) => {
-        console.log(error);
-        return []
-      })
+    .get("/articles")
+    .then((response) => response.data.articles)
+    .catch((error) => {
+      console.log(error);
+      return [];
+    });
 };
 
 export function getArticleById(article_id) {
@@ -19,18 +19,27 @@ export function getArticleById(article_id) {
     .get(`/articles/${article_id}`)
     .then((response) => {
       return response.data;
-    }).catch((err) => {
-        console.log(err)
+    })
+    .catch((err) => {
+      console.log(err);
     });
 }
 
 export function getCommentsByArticleId(article_id) {
   return apiClient
-  .get(`/articles/${article_id}/comments`)
-  .then((response) => {
-    return response.data
-  }).catch((err) => {
-        console.log(err)
+    .get(`/articles/${article_id}/comments`)
+    .then((response) => {
+      return response.data;
+    })
+    .catch((err) => {
+      console.log(err);
     });
 }
 
+export function patchVotes(article_id, inc_votes) {
+  return apiClient
+    .patch(`/articles/${article_id}`, {inc_votes})
+    .catch((err) => {
+      console.log(err);
+    });
+}
