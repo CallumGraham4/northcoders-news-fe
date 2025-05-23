@@ -1,6 +1,6 @@
 export const CommentPost = (props) => {
   return (
-    <form className="comment-post" action="post-comment">
+    <>
       <label className="comment-post-label" htmlFor="comment-post">
         Enter comment here
       </label>
@@ -10,9 +10,13 @@ export const CommentPost = (props) => {
         id="comment-post"
         onChange={props.handleChange}
       />
-      <button className="post-comment-button" onClick={props.handleSubmit}>
-        Post
-      </button>
-    </form>
+      {props.formSubmitted ? (
+        <p>Thanks!</p>
+      ) : (
+        <button className="post-comment-button" onClick={props.handleSubmit}>
+          Post
+        </button>
+      )}
+      </>
   );
 };

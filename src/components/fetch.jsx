@@ -57,3 +57,11 @@ export function postComment(article_id, comment) {
       return Promise.reject(err);
     });
 }
+
+export function deleteComment(comment_id) {
+  return apiClient
+  .delete(`/comments/${comment_id}`)
+  .catch((err) => {
+    return Promise.reject(err);
+  })
+}
