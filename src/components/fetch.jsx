@@ -43,3 +43,17 @@ export function patchVotes(article_id, inc_votes) {
       console.log(err);
     });
 }
+
+export function postComment(article_id, comment) {
+  return apiClient
+    .post(`/articles/${article_id}/comments`, {
+      username: comment.username,
+      body: comment.body,
+    })
+    .then((response) => {
+      return response.data
+    })
+    .catch((err) => {
+      return Promise.reject(err);
+    });
+}
