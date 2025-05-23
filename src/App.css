@@ -177,3 +177,15 @@ ul {
   font-size: 14px;
   color: #521a68;
 }
+
+.comment-info {
+  color: #5c4d5f;
+  font-size: 14px;
+  padding-top: 15px;
+  padding-bottom: 3px;
+}
+
+.comment-body {
+  padding-bottom: 8px;
+  padding-top: 15px;
+}
