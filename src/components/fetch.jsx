@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const apiClient = axios.create({
-  baseURL: "https://northcoders-news-be-klxa.onrender.com/api",
+  baseURL: "https://northcoders-news-backend-z8oc.onrender.com/api",
 });
 
 export const getArticles = () => {
